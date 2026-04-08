@@ -1,4 +1,4 @@
-import { saludar, despedir, estadoSistema, sumar } from "../src/app.js"
+import { saludar, despedir, estadoSistema, sumar, restar } from "../src/app.js"
 
 function ejecutarPruebas() {
     let pasadas = 0;
@@ -24,12 +24,34 @@ function ejecutarPruebas() {
     console.log("\nResultados: " + pasadas + " pasadas, ", + fallidas + "fallidas");
     if (fallidas > 0) process.exit(1);
 
-    const suma = sumar(5, 7);
-    if (suma === 12) {
-        console.log("Test 3 Pasado: sumar 5+7 devuelve 12");
+
+    const a = 15;
+    const b = 20;
+
+    const sumarResultado = sumar(a, b);
+
+    console.log("Resultado de sumar:", a, "+", b, "=", sumarResultado);
+
+    if (sumarResultado === a + b) {
+        console.log("Test 3 Pasado: funcion sumar funciona correctamente");
         pasadas++;
     } else {
-        console.log("Test 3 fallido: ", suma);
+        console.log("Test 3 fallido: ", sumarResultado);
+        fallidas++;
+    }
+
+    const c = 10;
+    const d = 5;
+
+    const restarResultado = restar(c, d);
+
+    console.log("Resultado de restar:", c, "-", d, "=", restarResultado);
+
+    if (restarResultado === c - d) {
+        console.log("Test 4 Pasado: funcion sumar funciona correctamente");
+        pasadas++;
+    } else {
+        console.log("Test 4 fallido: ", restarResultado);
         fallidas++;
     }
 }
