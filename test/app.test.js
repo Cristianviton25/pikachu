@@ -18,12 +18,9 @@ function ejecutarPruebas() {
         console.log("Test 2 Pasado: estadoSistema() funciona en Vitonco");
         pasadas++;
     } else {
-        console.log("Test 2 fallido: ", estado, "en Vitonco");
+        console.log("Test 2 fallido: ", actualEstado);
         fallidas++;
     }
-    console.log("\nResultados: " + pasadas + " pasadas, ", + fallidas + "fallidas");
-    if (fallidas > 0) process.exit(1);
-
 
     const a = 15;
     const b = 20;
@@ -48,11 +45,17 @@ function ejecutarPruebas() {
     console.log("Resultado de restar:", c, "-", d, "=", restarResultado);
 
     if (restarResultado === c - d) {
-        console.log("Test 4 Pasado: funcion sumar funciona correctamente");
+        console.log("Test 4 Pasado: funcion restar funciona correctamente");
         pasadas++;
     } else {
         console.log("Test 4 fallido: ", restarResultado);
         fallidas++;
     }
+
+    // ✅ RESULTADO FINAL (al final)
+    console.log("\nResultados: " + pasadas + " pasadas, " + fallidas + " fallidas");
+
+    if (fallidas > 0) process.exit(1);
 }
+
 ejecutarPruebas();
