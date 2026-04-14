@@ -20,7 +20,7 @@ export function sumar(a, b) {
   return a + b;
 }
 
-export function healtCheck() {
+export function healthCheck() {
     return{
 status:'ok',
 timestamp: new Date().toISOString(),
