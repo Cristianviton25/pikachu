@@ -1,10 +1,10 @@
 {
- "name":"flowVitonco",
- "version": "1.0.0",
- "type": "module",
- "description": "Primera aplicación Vitonco Flow",
- "scripts": {
- "start": "node src/app.js",
- "test": "node test/app.test.js"
- }
+    "name": "flowVitonco",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Primera aplicacion de Vitonco flow",
+        "scripts": {
+        "start": "node src/app.js",
+        "test": "node test/app.test.js"
+    }
 }
