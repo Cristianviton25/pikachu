@@ -52,7 +52,6 @@ function ejecutarPruebas() {
         fallidas++;
     }
 
-    // ✅ RESULTADO FINAL (al final)
     console.log("\nResultados: " + pasadas + " pasadas, " + fallidas + " fallidas");
 
     if (fallidas > 0) process.exit(1);
