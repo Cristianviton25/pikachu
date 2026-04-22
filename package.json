@@ -3,8 +3,12 @@
     "version": "1.0.0",
     "type": "module",
     "description": "Primera aplicacion de Vitonco flow",
-        "scripts": {
+    "scripts": {
         "start": "node src/app.js",
         "test": "node test/app.test.js"
+    },
+    "dependencies": {
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5"
     }
 }
