@@ -24,15 +24,15 @@ jobs:
       - name: setup page
         uses: actions/configure-page@v4
 
-      -name: Upload artifac
-        uses: actions/Upload-pages-artifact@v3
+      - name: Upload artifac
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "."
 
-      -name: Deploy to GitHub pages
+      - name: Deploy to GitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      -name: Show deployment URL
+      - name: Show deployment URL
         run: |
           echo "Sitio en produccion: ${{ steps.deployment.outputs.page_url }}"
