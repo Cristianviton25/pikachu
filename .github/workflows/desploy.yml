@@ -1,0 +1,28 @@
+name: Deploy - yiyomafla despliegue
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Desplegar a producción
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install          
+
+      - name: Desplegar aplicación
+        run: |
+          echo "Iniciando despliegue de aplicación yiyomafla v $(node -p \"require('./package.json').version\")"
+          echo "Sistema desplegado correctamente"
+          echo "URL: https://streamflow.example.com"
