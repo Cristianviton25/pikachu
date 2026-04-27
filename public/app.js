@@ -22,5 +22,5 @@ statusDiv.style.color = '#009B4C'
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('version').textContent = `v${VERSION}`;
-    verificarSistema();    "verificar":``
+    verificarSistema();
 })
