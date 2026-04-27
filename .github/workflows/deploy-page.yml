@@ -1,0 +1,38 @@
+name: deploy para yiyomafla
+
+on:
+  push:
+    branch:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup page
+        uses: actions/configure-page@v4
+
+      -name: Upload artifac
+        uses: actions/Upload-pages-artifact@v3
+        with:
+          path: "."
+
+      -name: Deploy to GitHub pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      -name: Show deployment URL
+        run: |
+          echo "Sitio en produccion: ${{ steps.deployment.outputs.page_url }}"
